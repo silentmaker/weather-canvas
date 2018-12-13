@@ -11,7 +11,7 @@
           }"
           @click="current = index">{{ capitalize(type) }}</li>
       </ul>
-      <span>Now</span>
+      <span>Now!</span>
     </div>
 
     <Weather :type="types[current]" />
@@ -47,10 +47,9 @@ body {
   font-family: 'Courier New', Courier, monospace;
   position: absolute;
   bottom: 160px;
-  left: 40px;
+  left: 20px;
   line-height: 32px;
   font-size: 24px;
-  padding: 16px;
   color: #fff;
 
   .types {
@@ -60,6 +59,7 @@ body {
     vertical-align: baseline;
     cursor: pointer;
     transition: transform 0.3s ease-in-out;
+    -webkit-tap-highlight-color: transparent;
 
     li {
       line-height: 32px;

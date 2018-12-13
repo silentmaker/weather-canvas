@@ -13,10 +13,10 @@ class Cloud {
 
   reset() {
     this.x = _.rand(0, window.innerWidth);
-    this.y = _.rand(0, window.innerHeight / 8);
+    this.y = _.rand(0, window.innerHeight / 10);
     this.vx = _.rand(-1, 1);
     this.vy = _.rand(-1, 1);
-    this.radius = _.rand(window.innerWidth / 6, window.innerWidth / 4);
+    this.radius = _.rand(window.innerWidth / 4, window.innerWidth / 2);
     this.alpha = _.rand(0.1, 0.2);
   }
 
