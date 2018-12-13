@@ -31,8 +31,7 @@ class Drop {
 }
 
 export default class Rainy {
-  constructor({ canvas, context }) {
-    this.canvas = canvas;
+  constructor({ context }) {
     this.context = context;
     this.drops = [];
     this.paint = this.paint.bind(this);

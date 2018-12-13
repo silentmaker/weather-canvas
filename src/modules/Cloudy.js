@@ -32,8 +32,7 @@ class Cloud {
 }
 
 export default class Cloudy {
-  constructor({ canvas, context }) {
-    this.canvas = canvas;
+  constructor({ context }) {
     this.context = context;
     this.clouds = [];
     this.paint = this.paint.bind(this);

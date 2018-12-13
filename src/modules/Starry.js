@@ -22,8 +22,7 @@ class Star {
 }
 
 export default class Starry {
-  constructor({ canvas, context }) {
-    this.canvas = canvas;
+  constructor({ context }) {
     this.context = context;
     this.stars = [];
     this.paint = this.paint.bind(this);

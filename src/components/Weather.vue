@@ -37,40 +37,22 @@ export default {
       this.canvas.height = window.innerHeight;
     },
     windy() {
-      this.weather = new Snowy({
-        canvas: this.canvas,
-        context: this.context,
-      });
+      this.weather = new Snowy({ context: this.context });
     },
     rainy() {
-      this.weather = new Rainy({
-        canvas: this.canvas,
-        context: this.context,
-      });
+      this.weather = new Rainy({ context: this.context });
     },
     cloudy() {
-      this.weather = new Cloudy({
-        canvas: this.canvas,
-        context: this.context,
-      });
+      this.weather = new Cloudy({ context: this.context });
     },
     foggy() {
-      this.weather = new Snowy({
-        canvas: this.canvas,
-        context: this.context,
-      });
+      this.weather = new Snowy({ context: this.context });
     },
     starry() {
-      this.weather = new Starry({
-        canvas: this.canvas,
-        context: this.context,
-      });
+      this.weather = new Starry({ context: this.context });
     },
     snowy() {
-      this.weather = new Snowy({
-        canvas: this.canvas,
-        context: this.context,
-      });
+      this.weather = new Snowy({ context: this.context });
     },
   },
 };

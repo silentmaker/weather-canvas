@@ -31,8 +31,7 @@ class Flake {
 }
 
 export default class Snowy {
-  constructor({ canvas, context }) {
-    this.canvas = canvas;
+  constructor({ context }) {
     this.context = context;
     this.flakes = [];
     this.paint = this.paint.bind(this);
