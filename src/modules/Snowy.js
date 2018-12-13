@@ -1,4 +1,4 @@
-const rand = (min, max) => Math.random() * (max - min) + min;
+import _ from './Utils';
 
 class Flake {
   constructor() {
@@ -12,12 +12,12 @@ class Flake {
   }
 
   reset() {
-    this.x = rand(0, window.innerWidth);
-    this.y = rand(0, -window.innerHeight);
-    this.vx = rand(-3, 3);
-    this.vy = rand(2, 5);
-    this.radius = rand(1, 4);
-    this.alpha = rand(0.1, 0.9);
+    this.x = _.rand(0, window.innerWidth);
+    this.y = _.rand(0, -window.innerHeight);
+    this.vx = _.rand(-3, 3);
+    this.vy = _.rand(2, 5);
+    this.radius = _.rand(1, 4);
+    this.alpha = _.rand(0.1, 0.9);
   }
 
   update() {

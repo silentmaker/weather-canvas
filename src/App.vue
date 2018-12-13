@@ -9,7 +9,7 @@
             transform: `scale(${1 - Math.abs(index - current) * 0.1})`,
             opacity: `${1 - Math.abs(index - current) * 0.15}`,
           }"
-          @click="current = index">{{ type }}</li>
+          @click="current = index">{{ capitalize(type) }}</li>
       </ul>
       <span>Now</span>
     </div>
@@ -19,6 +19,7 @@
 </template>
 
 <script>
+import _ from './modules/Utils';
 import Weather from './components/Weather.vue';
 
 export default {
@@ -28,6 +29,7 @@ export default {
     return {
       types: ['foggy', 'windy', 'cloudy', 'rainy', 'starry', 'snowy'],
       current: 5,
+      capitalize: _.capitalize,
     };
   },
 };

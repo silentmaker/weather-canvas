@@ -1,4 +1,4 @@
-const rand = (min, max) => Math.random() * (max - min) + min;
+import _ from './Utils';
 
 class Star {
   constructor() {
@@ -10,14 +10,14 @@ class Star {
   }
 
   reset() {
-    this.x = rand(0, window.innerWidth);
-    this.y = rand(0, window.innerHeight);
-    this.radius = rand(1, 2);
-    this.alpha = rand(0.1, 1);
+    this.x = _.rand(0, window.innerWidth);
+    this.y = _.rand(0, window.innerHeight);
+    this.radius = _.rand(1, 2);
+    this.alpha = _.rand(0.1, 1);
   }
 
   update() {
-    this.radius = rand(1, 2);
+    this.radius = _.rand(1, 2);
   }
 }
 

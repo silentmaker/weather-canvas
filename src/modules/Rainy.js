@@ -1,4 +1,4 @@
-const rand = (min, max) => Math.random() * (max - min) + min;
+import _ from './Utils';
 
 class Drop {
   constructor() {
@@ -12,12 +12,12 @@ class Drop {
   }
 
   reset() {
-    this.x = rand(0, window.innerWidth);
-    this.y = rand(0, -window.innerHeight);
-    this.vx = rand(0, -2);
-    this.vy = rand(8, 10);
+    this.x = _.rand(0, window.innerWidth);
+    this.y = _.rand(0, -window.innerHeight);
+    this.vx = _.rand(0, -2);
+    this.vy = _.rand(8, 10);
     this.radius = 1;
-    this.alpha = rand(0.2, 1);
+    this.alpha = _.rand(0.2, 1);
   }
 
   update() {

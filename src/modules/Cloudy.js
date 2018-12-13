@@ -1,4 +1,4 @@
-const rand = (min, max) => Math.random() * (max - min) + min;
+import _ from './Utils';
 
 class Cloud {
   constructor() {
@@ -12,12 +12,12 @@ class Cloud {
   }
 
   reset() {
-    this.x = rand(0, window.innerWidth);
-    this.y = rand(0, window.innerHeight / 8);
-    this.vx = rand(-1, 1);
-    this.vy = rand(-1, 1);
-    this.radius = rand(window.innerWidth / 6, window.innerWidth / 4);
-    this.alpha = rand(0.1, 0.2);
+    this.x = _.rand(0, window.innerWidth);
+    this.y = _.rand(0, window.innerHeight / 8);
+    this.vx = _.rand(-1, 1);
+    this.vy = _.rand(-1, 1);
+    this.radius = _.rand(window.innerWidth / 6, window.innerWidth / 4);
+    this.alpha = _.rand(0.1, 0.2);
   }
 
   update() {
