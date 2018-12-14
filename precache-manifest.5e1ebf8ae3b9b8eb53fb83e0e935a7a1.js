@@ -1,18 +1,18 @@
 self.__precacheManifest = [
   {
-    "revision": "039d2a93641548837900",
+    "revision": "47a7b76d609150c858e9",
     "url": "/weather-canvas/css/app.0dde884c.css"
   },
   {
-    "revision": "039d2a93641548837900",
-    "url": "/weather-canvas/js/app.a58d2b80.js"
+    "revision": "47a7b76d609150c858e9",
+    "url": "/weather-canvas/js/app.0c9a0f2e.js"
   },
   {
     "revision": "ba011c2c887aadbefbe5",
     "url": "/weather-canvas/js/chunk-vendors.6b8ae08f.js"
   },
   {
-    "revision": "5d6a3d504e2bef70cd0ebb283f08313f",
+    "revision": "e183ea27d44ee770f178aeaecbdffaf3",
     "url": "/weather-canvas/index.html"
   },
   {

@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/weather-canvas/precache-manifest.d35eb3cfc39f3273f4390da0c6cca752.js"
+  "/weather-canvas/precache-manifest.5e1ebf8ae3b9b8eb53fb83e0e935a7a1.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "weather-canvas"});
