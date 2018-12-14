@@ -35,6 +35,7 @@ export default class Snowy {
     this.context = context;
     this.flakes = [];
     this.paint = this.paint.bind(this);
+    this.destroy = this.destroy.bind(this);
     this.createFlakes();
     requestAnimationFrame(this.paint);
   }
@@ -48,6 +49,7 @@ export default class Snowy {
   }
 
   paint() {
+    if (this.destroyed) return;
     this.context.clearRect(0, 0, window.innerWidth, window.innerHeight);
     this.flakes.map((flake) => {
       flake.update();
@@ -62,5 +64,9 @@ export default class Snowy {
       return false;
     });
     requestAnimationFrame(this.paint);
+  }
+
+  destroy() {
+    this.destroyed = true;
   }
 }

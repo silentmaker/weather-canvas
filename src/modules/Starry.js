@@ -26,10 +26,12 @@ export default class Starry {
     this.context = context;
     this.stars = [];
     this.paint = this.paint.bind(this);
+    this.destroy = this.destroy.bind(this);
     requestAnimationFrame(this.paint);
   }
 
   paint() {
+    if (this.destroyed) return;
     this.context.clearRect(0, 0, window.innerWidth, window.innerHeight);
     if (this.stars.length < window.innerWidth / 3) this.stars.push(new Star());
     this.stars.map((star) => {
@@ -45,5 +47,9 @@ export default class Starry {
       return false;
     });
     requestAnimationFrame(this.paint);
+  }
+
+  destroy() {
+    this.destroyed = true;
   }
 }

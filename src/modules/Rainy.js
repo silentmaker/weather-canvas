@@ -35,6 +35,7 @@ export default class Rainy {
     this.context = context;
     this.drops = [];
     this.paint = this.paint.bind(this);
+    this.destroy = this.destroy.bind(this);
     this.createDrops();
     requestAnimationFrame(this.paint);
   }
@@ -48,6 +49,7 @@ export default class Rainy {
   }
 
   paint() {
+    if (this.destroyed) return;
     this.context.clearRect(0, 0, window.innerWidth, window.innerHeight);
     this.drops.map((drop) => {
       drop.update();
@@ -62,5 +64,9 @@ export default class Rainy {
       return false;
     });
     requestAnimationFrame(this.paint);
+  }
+
+  destroy() {
+    this.destroyed = true;
   }
 }

@@ -29,7 +29,7 @@ export default {
   },
   methods: {
     init() {
-      this.weather = null;
+      if (this.weather && this.weather.destroy) this.weather.destroy();
       this[this.type]();
     },
     resize() {

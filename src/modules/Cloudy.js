@@ -36,6 +36,7 @@ export default class Cloudy {
     this.context = context;
     this.clouds = [];
     this.paint = this.paint.bind(this);
+    this.destroy = this.destroy.bind(this);
     this.createClouds();
     requestAnimationFrame(this.paint);
   }
@@ -49,6 +50,7 @@ export default class Cloudy {
   }
 
   paint() {
+    if (this.destroyed) return;
     this.context.clearRect(0, 0, window.innerWidth, window.innerHeight);
     this.clouds.map((cloud) => {
       cloud.update();
@@ -63,5 +65,9 @@ export default class Cloudy {
       return false;
     });
     requestAnimationFrame(this.paint);
+  }
+
+  destroy() {
+    this.destroyed = true;
   }
 }
