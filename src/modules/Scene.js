@@ -99,12 +99,7 @@ export class Cloudy extends Scene {
 }
 
 export class Starry extends Scene {
-  createStars() {
-    this.createActor(Star, this.viewPort.width / 3);
-  }
-
   run() {
-    this.createStars();
     requestAnimationFrame(this.paint.bind(this));
   }
 
@@ -112,6 +107,8 @@ export class Starry extends Scene {
     if (this.destroyed) return;
 
     this.context.clearRect(0, 0, this.viewPort.width, this.viewPort.height);
+
+    if (this.actors.length < this.viewPort.width / 3) this.actors.push(new Star(this.viewPort));
 
     this.actors.forEach((star) => {
       star.update();
