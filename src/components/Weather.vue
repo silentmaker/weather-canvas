@@ -3,10 +3,18 @@
 </template>
 
 <script>
-import Snowy from '../modules/Snowy';
-import Rainy from '../modules/Rainy';
-import Starry from '../modules/Starry';
-import Cloudy from '../modules/Cloudy';
+import {
+  Snowy, Rainy, Starry, Cloudy,
+} from '../modules/Scene';
+
+const weatherMap = new Map([
+  ['windy', args => new Snowy(args)],
+  ['rainy', args => new Rainy(args)],
+  ['cloudy', args => new Cloudy(args)],
+  ['foggy', args => new Snowy(args)],
+  ['starry', args => new Starry(args)],
+  ['snowy', args => new Snowy(args)],
+]);
 
 export default {
   name: 'weather',
@@ -21,6 +29,12 @@ export default {
     this.context = this.canvas.getContext('2d');
     this.$refs.container.appendChild(this.canvas);
     window.addEventListener('resize', this.resize);
+
+    this.viewPort = {
+      width: window.innerWidth,
+      height: window.innerHeight,
+    };
+
     this.resize();
     this.init();
   },
@@ -30,29 +44,15 @@ export default {
   methods: {
     init() {
       if (this.weather && this.weather.destroy) this.weather.destroy();
-      this[this.type]();
+
+      const options = { context: this.context, viewPort: this.viewPort };
+
+      this.weather = weatherMap.get(this.type)(options);
+      this.weather.run();
     },
     resize() {
-      this.canvas.width = window.innerWidth;
-      this.canvas.height = window.innerHeight;
-    },
-    windy() {
-      this.weather = new Snowy({ context: this.context });
-    },
-    rainy() {
-      this.weather = new Rainy({ context: this.context });
-    },
-    cloudy() {
-      this.weather = new Cloudy({ context: this.context });
-    },
-    foggy() {
-      this.weather = new Snowy({ context: this.context });
-    },
-    starry() {
-      this.weather = new Starry({ context: this.context });
-    },
-    snowy() {
-      this.weather = new Snowy({ context: this.context });
+      this.canvas.width = this.viewPort.width;
+      this.canvas.height = this.viewPort.height;
     },
   },
 };
