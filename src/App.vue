@@ -28,7 +28,7 @@ export default {
   data() {
     return {
       types: ['foggy', 'windy', 'cloudy', 'rainy', 'starry', 'snowy'],
-      current: 5,
+      current: 4,
       capitalize: _.capitalize,
     };
   },
